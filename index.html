@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshal Thakur — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Set API URL based on environment
+    // For local development: http://127.0.0.1:8000/api
+    // For production: update this to your deployed Django backend URL
+    window.API_URL = 'https://portfolio-ct94.onrender.com/api';
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <video src="img/logo.mp4" autoplay loop muted playsinline class="nav-logo-video"></video>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#certifications">Certificates</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#resume" class="mobile-link">Resume</a>
+    <a href="#certifications" class="mobile-link">Certificates</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">— Open to opportunities</div>
+      <div class="hero-name">Harshal<br /><span>Thakur</span></div>
+      <div class="hero-title">Software Developer &nbsp;·&nbsp; Python &nbsp;·&nbsp; Java &nbsp;·&nbsp; Nagpur, India</div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-counter">// CS Graduate · B.Tech</div>
+      <div class="hero-content">
+        <div class="hero-tagline">
+          I build software<br />that <span>solves</span><br />real problems.
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">See my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <span class="section-num">01 /</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="section-body">
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>I'm a Computer Science graduate with a strong interest in programming, problem solving, and building software that matters. My core strengths are in Python and Java, backed by solid knowledge of Data Structures, DBMS, and core CS fundamentals.</p>
+          <p>I've worked on projects ranging from AI-powered web apps to data scrapers and desktop systems — always focused on clean logic and real utility. I enjoy digging into problems and engineering solutions that are both practical and efficient.</p>
+          <p>I'm currently looking for an opportunity to contribute my skills in a dynamic team where I can keep growing and keep building.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Projects Built</div></div>
+          <div class="stat-box"><div class="stat-num">7.0</div><div class="stat-label">B.Tech CGPA</div></div>
+          <div class="stat-box"><div class="stat-num">2+</div><div class="stat-label">Certifications</div></div>
+          <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Internship</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <span class="section-num">02 /</span>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Populated by JS via API -->
+      <div class="projects-loading">Loading projects...</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-header">
+      <span class="section-num">03 /</span>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="section-body">
+      <div class="skills-layout" id="skillsLayout">
+        <!-- Populated by JS via API -->
+        <div class="skills-loading">Loading skills...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="section">
+    <div class="section-header">
+      <span class="section-num">04 /</span>
+      <h2 class="section-title">Resume</h2>
+    </div>
+    <div class="section-body">
+      <div class="resume-layout">
+        <div>
+          <div class="skill-group-title">Experience</div>
+          <div class="timeline-item">
+            <div class="timeline-date">Internship</div>
+            <div class="timeline-role">Sports Analytics Intern</div>
+            <div class="timeline-company">Catch Sports Analytics</div>
+            <div class="timeline-desc">Hands-on experience in sports analytics — game analysis, tagging methods, and real-time data handling. Developed skills in data analysis, sports tagging, and attention to detail.</div>
+          </div>
+          <div class="skill-group-title" style="margin-top:2rem;">Education</div>
+          <div class="timeline-item">
+            <div class="timeline-date">B.Tech</div>
+            <div class="timeline-role">Computer Technology</div>
+            <div class="timeline-company">Priyadarshini College of Engineering</div>
+            <div class="timeline-desc">CGPA: 7.0 / 10</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Diploma</div>
+            <div class="timeline-role">Computer Technology</div>
+            <div class="timeline-company">Priyadarshini Polytechnic</div>
+            <div class="timeline-desc">Percentage: 78.69%</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Class X</div>
+            <div class="timeline-role">Secondary School</div>
+            <div class="timeline-company">Tejasvi Vidya Mandir</div>
+            <div class="timeline-desc">Percentage: 84.60%</div>
+          </div>
+        </div>
+        <div>
+          <div class="resume-side-title">Certifications</div>
+          <div class="cert-item">Python Full Stack Developer — Virtual Internship</div>
+          <div class="cert-item">SQL Basics Certification</div>
+          <div class="resume-side-title">Languages</div>
+          <div class="cert-item">English — Fluent</div>
+          <div class="cert-item">Hindi — Native</div>
+          <div class="cert-item">Marathi — Native</div>
+          <div class="resume-side-title">Location</div>
+          <div class="cert-item">Nagpur, Maharashtra, India</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="section-header">
+      <span class="section-num">05 /</span>
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="section-body">
+      <div class="certs-grid" id="certsGrid">
+        <div class="projects-loading">Loading certifications...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <span class="section-num">06 /</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="section-body">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p>I'm actively looking for my next opportunity — whether that's a full-time role, internship, or an interesting project to collaborate on. If you think I'd be a good fit, I'd love to hear from you.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:harshalthakur0987@gmail.com">
+              <span>harshalthakur0987@gmail.com</span><span>→</span>
+            </a>
+            <a class="contact-link" href="tel:+918390429410">
+              <span>+91 83904 29410</span><span>→</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/harshalthakur/" target="_blank" rel="noopener">
+              <span>LinkedIn — harshalthakur</span><span>→</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <div id="formSuccess" class="form-success hidden">
+            <div class="form-success-icon">✓</div>
+            <p>Message sent! I'll get back to you soon.</p>
+          </div>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Full name" required />
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="email">Your email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required />
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Send message →</button>
+            <span class="form-error" id="formError"></span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <video src="img/logo.mp4" autoplay loop muted playsinline style="height:36px; width:auto; object-fit:contain; display:block;"></video>
+    </div>
+    <div>Harshal Thakur · Nagpur, India</div>
+    <div>© 2026</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

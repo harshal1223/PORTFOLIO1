@@ -1,0 +1,1 @@
+window.API_URL = 'https://your-app.onrender.com/api';
