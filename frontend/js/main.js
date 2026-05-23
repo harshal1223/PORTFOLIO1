@@ -4,8 +4,7 @@
    ============================================= */
 
 // Use environment variable or fallback to local dev server
-const API_BASE = window.API_URL || 'http://127.0.0.1:8000/api';
-
+const API_BASE = 'https://portfolio1-8nje.onrender.com/api';
 window.API_URL = 'https://portfolio-ct94.onrender.com/api';
 
 /* ---- Hamburger Menu ---- */
