@@ -3,9 +3,7 @@
    main.js
    ============================================= */
 
-// Use environment variable or fallback to local dev server
 const API_BASE = 'https://portfolio1-8nje.onrender.com/api';
-window.API_URL = 'https://portfolio-ct94.onrender.com/api';
 
 /* ---- Hamburger Menu ---- */
 const hamburger = document.getElementById('hamburger');
@@ -47,13 +45,7 @@ async function loadProjects() {
     if (!res.ok) throw new Error('API error');
     const projects = await res.json();
 
-    grid.innerHTML = '';    cd "C:\Users\HP\VS CODE PROJECTS\Projects\portfolio"
-    
-    git add .
-    
-    git commit -m "Update API URL for production"
-    
-    git push origin main
+    grid.innerHTML = '';
     projects.forEach((project, index) => {
       const card = document.createElement('div');
       card.className = 'project-card';
@@ -184,8 +176,8 @@ function setupContactForm() {
     e.preventDefault();
     clearErrors();
 
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
+    const name    = form.name.value.trim();
+    const email   = form.email.value.trim();
     const message = form.message.value.trim();
     let valid = true;
 
