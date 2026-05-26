@@ -5,91 +5,85 @@
 
 const API_BASE = 'https://portfolio1-8nje.onrender.com/api';
 
-/* ---- Hamburger Menu ---- */
+/* ---- Hamburger ---- */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-
-mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
 /* ---- Scroll Fade-in ---- */
 function setupScrollObserver() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  document.querySelectorAll('.section').forEach(el => {
-    el.classList.add('fade-up');
-    observer.observe(el);
-  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.ed-section, .quote-band').forEach(el => { el.classList.add('fade-up'); observer.observe(el); });
 }
 
-/* ---- Load Projects from API ---- */
+
+/* ---- INTERACTIVE LOGO POPUP ---- */
+
+function setupLogoInteraction(){
+  const logo = document.querySelector('.nav-logo-video');
+  if(!logo) return;
+  let popup;
+  logo.addEventListener('click',()=>{
+    if(document.querySelector('.logo-preview')){
+      document.querySelector('.logo-preview').remove();
+      return;
+    }
+    popup=document.createElement('div');
+    popup.className='logo-preview';
+    popup.innerHTML=`
+      <video 
+        src="${logo.getAttribute('src')}" 
+        autoplay 
+        loop 
+        muted 
+        playsinline>
+      </video>
+      <p>Harshal Thakur Logo</p>
+    `;
+    document.body.appendChild(popup);
+    popup.addEventListener('click',()=>{
+      popup.remove();
+    });
+  });
+
+}
+/* ---- Projects ---- */
 async function loadProjects() {
   const grid = document.getElementById('projectsGrid');
   try {
     const res = await fetch(`${API_BASE}/projects/`);
-    if (!res.ok) throw new Error('API error');
+    if (!res.ok) throw new Error();
     const projects = await res.json();
-
     grid.innerHTML = '';
-    projects.forEach((project, index) => {
+    projects.forEach((p, i) => {
       const card = document.createElement('div');
-      card.className = 'project-card';
+      card.className = 'proj-card';
       card.innerHTML = `
-        <div class="project-num">// ${String(index + 1).padStart(3, '0')}</div>
-        <div class="project-name">${escapeHtml(project.name)}</div>
-        <div class="project-tech">${escapeHtml(project.tech_stack)}</div>
-        <ul class="project-bullets">
-          ${project.bullets.map(b => `<li class="project-bullet">${escapeHtml(b)}</li>`).join('')}
-        </ul>
-      `;
+        <div class="proj-num">// ${String(i + 1).padStart(3, '0')}</div>
+        <div class="proj-name">${escapeHtml(p.name)}</div>
+        <div class="proj-tech">${escapeHtml(p.tech_stack)}</div>
+        <ul class="proj-bullets">
+          ${p.bullets.map(b => `<li class="proj-bullet">${escapeHtml(b)}</li>`).join('')}
+        </ul>`;
       grid.appendChild(card);
     });
-
-    /* Dark "What's Next" card */
-    const nextCard = document.createElement('div');
-    nextCard.className = 'project-card';
-    nextCard.style.cssText = 'background: var(--ink); color: var(--paper);';
-    nextCard.innerHTML = `
-      <div class="project-num" style="color:#555;">// more</div>
-      <div class="project-name" style="color:var(--paper);">What's Next?</div>
-      <div class="project-tech" style="color:var(--accent);">Always building something new</div>
-      <ul class="project-bullets">
-        <li class="project-bullet" style="color:#aaa;">Exploring new ideas at the intersection of Python and data.</li>
-        <li class="project-bullet" style="color:#aaa;">Open to internships, freelance gigs, and collaborations.</li>
-        <li class="project-bullet" style="color:#aaa;">Reach out — let's build something together.</li>
-      </ul>
-    `;
-    grid.appendChild(nextCard);
-
-  } catch (err) {
-    grid.innerHTML = `<div class="projects-loading">Could not load projects. <a href="#contact" style="color:var(--accent)">Contact me directly.</a></div>`;
-    console.error('Projects API error:', err);
+  } catch {
+    grid.innerHTML = `<div class="art-loading">Could not load projects.</div>`;
   }
 }
 
-/* ---- Load Skills from API ---- */
+/* ---- Skills ---- */
 async function loadSkills() {
   const layout = document.getElementById('skillsLayout');
   try {
     const res = await fetch(`${API_BASE}/skills/`);
-    if (!res.ok) throw new Error('API error');
+    if (!res.ok) throw new Error();
     const groups = await res.json();
-
     layout.innerHTML = '';
     groups.forEach(group => {
       const col = document.createElement('div');
@@ -97,29 +91,24 @@ async function loadSkills() {
       group.skills.forEach(skill => {
         const item = document.createElement('div');
         item.className = 'skill-item';
-        const dots = Array.from({ length: 5 }, (_, i) =>
-          `<div class="dot${i < skill.level ? '' : ' empty'}"></div>`
-        ).join('');
+        const dots = Array.from({ length: 5 }, (_, i) => `<div class="dot${i < skill.level ? '' : ' empty'}"></div>`).join('');
         item.innerHTML = `<span>${escapeHtml(skill.name)}</span><div class="skill-dots">${dots}</div>`;
         col.appendChild(item);
       });
       layout.appendChild(col);
     });
-
-  } catch (err) {
-    layout.innerHTML = `<div class="skills-loading">Could not load skills.</div>`;
-    console.error('Skills API error:', err);
+  } catch {
+    layout.innerHTML = `<div class="art-loading">Could not load skills.</div>`;
   }
 }
 
-/* ---- Load Certifications from API ---- */
+/* ---- Certifications ---- */
 async function loadCertifications() {
   const grid = document.getElementById('certsGrid');
   try {
     const res = await fetch(`${API_BASE}/certifications/`);
-    if (!res.ok) throw new Error('API error');
+    if (!res.ok) throw new Error();
     const certs = await res.json();
-
     grid.innerHTML = '';
     certs.forEach(cert => {
       const card = document.createElement('div');
@@ -129,23 +118,16 @@ async function loadCertifications() {
         <div class="cert-issuer">${escapeHtml(cert.issuer)}</div>
         <div class="cert-period">${escapeHtml(cert.period)}</div>
         <div class="cert-footer">
+          <span class="cert-grade">Grade: ${escapeHtml(cert.grade)}</span>
           <div>
-            <span class="cert-grade">Grade: ${escapeHtml(cert.grade)}</span>
-          </div>
-          <div style="text-align:right;">
             <div class="cert-id-label">ID: ${escapeHtml(cert.cert_id)}</div>
-            ${cert.pdf_file
-              ? `<a class="cert-view-btn" href="img/${escapeHtml(cert.pdf_file)}" target="_blank">View Certificate →</a>`
-              : ''}
+            ${cert.pdf_file ? `<a class="cert-view-btn" href="frontend/img/${escapeHtml(cert.pdf_file)}" target="_blank">View PDF →</a>` : ''}
           </div>
-        </div>
-      `;
+        </div>`;
       grid.appendChild(card);
     });
-
-  } catch (err) {
-    grid.innerHTML = `<div class="projects-loading">Could not load certifications.</div>`;
-    console.error('Certifications API error:', err);
+  } catch {
+    grid.innerHTML = `<div class="art-loading">Could not load certifications.</div>`;
   }
 }
 
@@ -155,48 +137,23 @@ function setupContactForm() {
   const submitBtn = document.getElementById('submitBtn');
   const formSuccess = document.getElementById('formSuccess');
 
-  function showError(fieldId, msg) {
-    const el = document.getElementById(fieldId);
-    if (el) el.textContent = msg;
-  }
-
+  function showErr(id, msg) { const el = document.getElementById(id); if (el) el.textContent = msg; }
   function clearErrors() {
-    ['nameError', 'emailError', 'messageError', 'formError'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = '';
-    });
-    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    ['nameError','emailError','messageError','formError'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = ''; });
   }
-
-  function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
+  function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearErrors();
-
-    const name    = form.name.value.trim();
-    const email   = form.email.value.trim();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
     const message = form.message.value.trim();
-    let valid = true;
-
-    if (!name) {
-      showError('nameError', 'Name is required.');
-      form.name.classList.add('error');
-      valid = false;
-    }
-    if (!email || !validateEmail(email)) {
-      showError('emailError', 'Please enter a valid email.');
-      form.email.classList.add('error');
-      valid = false;
-    }
-    if (!message) {
-      showError('messageError', 'Message cannot be empty.');
-      form.message.classList.add('error');
-      valid = false;
-    }
-    if (!valid) return;
+    let ok = true;
+    if (!name) { showErr('nameError', 'Name is required.'); ok = false; }
+    if (!email || !validEmail(email)) { showErr('emailError', 'Valid email required.'); ok = false; }
+    if (!message) { showErr('messageError', 'Message cannot be empty.'); ok = false; }
+    if (!ok) return;
 
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
@@ -207,21 +164,17 @@ function setupContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message }),
       });
-
-      const data = await res.json();
-
       if (res.ok) {
         form.classList.add('hidden');
         formSuccess.classList.remove('hidden');
       } else {
-        const msg = data.detail || data.message || 'Something went wrong. Try emailing me directly.';
-        showError('formError', msg);
-        submitBtn.textContent = 'Send message →';
+        showErr('formError', 'Something went wrong. Email me directly.');
+        submitBtn.textContent = '↳ Let\'s collaborate';
         submitBtn.disabled = false;
       }
-    } catch (err) {
-      showError('formError', 'Network error. Please email me directly.');
-      submitBtn.textContent = 'Send message →';
+    } catch {
+      showErr('formError', 'Network error. Please email me directly.');
+      submitBtn.textContent = '↳ Let\'s collaborate';
       submitBtn.disabled = false;
     }
   });
@@ -229,9 +182,9 @@ function setupContactForm() {
 
 /* ---- Utility ---- */
 function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
 }
 
 /* ---- Init ---- */
