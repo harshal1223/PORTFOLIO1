@@ -6,12 +6,11 @@
   <title>Harshal Thakur — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="frontend/css/style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-logo">
       <video src="frontend/img/logo.mp4" autoplay loop muted playsinline class="nav-logo-video"></video>
@@ -39,193 +38,148 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow">— Open to opportunities</div>
-      <div class="hero-name">Harshal<br /><span>Thakur</span></div>
-      <div class="hero-title">Software Developer &nbsp;·&nbsp; Python &nbsp;·&nbsp; Java &nbsp;·&nbsp; Nagpur, India</div>
+    <div class="hero-text">
+      <h1 class="hero-heading">Welcome to<br />My Dev<br />Portfolio</h1>
+      <div class="hero-badge">Harshal Thakur / Software Engineer</div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/harshalthakur/" target="_blank" rel="noopener noreferrer" class="hero-link">Connect on LinkedIn</a>
+      </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-counter">// CS Graduate · B.Tech</div>
-      <div class="hero-content">
-        <div class="hero-tagline">
-          I build software<br />that <span>solves</span><br />real problems.
-        </div>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#projects">See my work</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    <div class="hero-img-wrap">
+      <div class="hero-circle">
+        <img src="frontend/img/harshal.jpg" alt="Harshal Thakur" class="hero-photo" onerror="this.style.display='none'" />
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#projects" class="hero-cta-link">&#8627; &nbsp;See my work</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="ed-section">
+    <div class="ed-section-inner">
+      <div class="ed-left">
+        <h2 class="ed-heading">Who is<br />Harshal?</h2>
+      </div>
+      <div class="ed-right">
+        <p class="ed-body">I'm a Computer Science graduate with a strong interest in programming and problem solving. My core strengths are Python and Java, backed by solid knowledge of Data Structures, DBMS, and CS fundamentals.</p>
+        <p class="ed-body">I've built AI-powered web apps, data scrapers, and desktop systems — always focused on clean logic and real utility. Currently looking for an opportunity to contribute in a dynamic team.</p>
+        <div class="ed-stats-row">
+          <div class="ed-stat"><span class="ed-stat-num">3</span><span class="ed-stat-label">Projects</span></div>
+          <div class="ed-stat"><span class="ed-stat-num">7.0</span><span class="ed-stat-label">CGPA</span></div>
+          <div class="ed-stat"><span class="ed-stat-num">2+</span><span class="ed-stat-label">Certs</span></div>
+          <div class="ed-stat"><span class="ed-stat-num">1</span><span class="ed-stat-label">Internship</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="section-header">
-      <span class="section-num">01 /</span>
-      <h2 class="section-title">About Me</h2>
-    </div>
-    <div class="section-body">
-      <div class="about-grid">
-        <div class="about-bio">
-          <p>I'm a Computer Science graduate with a strong interest in programming, problem solving, and building software that matters. My core strengths are in Python and Java, backed by solid knowledge of Data Structures, DBMS, and core CS fundamentals.</p>
-          <p>I've worked on projects ranging from AI-powered web apps to data scrapers and desktop systems — always focused on clean logic and real utility. I enjoy digging into problems and engineering solutions that are both practical and efficient.</p>
-          <p>I'm currently looking for an opportunity to contribute my skills in a dynamic team where I can keep growing and keep building.</p>
+  <!-- RESUME -->
+  <section id="resume" class="ed-section ed-dark">
+    <div class="ed-section-inner">
+      <div class="ed-left">
+        <h2 class="ed-heading">My<br />Background</h2>
+      </div>
+      <div class="ed-right">
+        <div class="bg-group">
+          <div class="bg-label">&#8627; &nbsp;Education</div>
+          <ul class="bg-list">
+            <li>B.Tech, Computer Technology — Priyadarshini College of Engineering <em>CGPA 7.0</em></li>
+            <li>Diploma, Computer Technology — Priyadarshini Polytechnic <em>78.69%</em></li>
+            <li>Class X — Tejasvi Vidya Mandir <em>84.60%</em></li>
+          </ul>
         </div>
-        <div class="about-stats">
-          <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Projects Built</div></div>
-          <div class="stat-box"><div class="stat-num">7.0</div><div class="stat-label">B.Tech CGPA</div></div>
-          <div class="stat-box"><div class="stat-num">2+</div><div class="stat-label">Certifications</div></div>
-          <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Internship</div></div>
+        <div class="bg-group">
+          <div class="bg-label">&#8627; &nbsp;Work Experience</div>
+          <ul class="bg-list">
+            <li>Sports Analytics Intern — Catch Sports Analytics</li>
+            <li>Data Analysis, Tagging methods, Real-time data handling</li>
+          </ul>
+        </div>
+        <div class="bg-group">
+          <div class="bg-label">&#8627; &nbsp;Certifications</div>
+          <ul class="bg-list">
+            <li>Python Full Stack Developer Virtual Internship — AICTE/EduSkills, 2025</li>
+            <li>Android Developer Virtual Internship — AICTE/Google for Developers, 2025</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="section-header">
-      <span class="section-num">02 /</span>
-      <h2 class="section-title">Projects</h2>
-    </div>
-    <div class="projects-grid" id="projectsGrid">
-      <div class="projects-loading">Loading projects...</div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="section-header">
-      <span class="section-num">03 /</span>
-      <h2 class="section-title">Skills</h2>
-    </div>
-    <div class="section-body">
-      <div class="skills-layout" id="skillsLayout">
-        <div class="skills-loading">Loading skills...</div>
+  <section id="projects" class="ed-section">
+    <div class="ed-full">
+      <h2 class="ed-heading-full">My Projects</h2>
+      <div class="art-proj-grid" id="projectsGrid">
+        <div class="art-loading">Loading projects...</div>
       </div>
     </div>
   </section>
 
-  <!-- RESUME -->
-  <section id="resume" class="section">
-    <div class="section-header">
-      <span class="section-num">04 /</span>
-      <h2 class="section-title">Resume</h2>
+  <!-- QUOTE BAND -->
+  <section class="quote-band">
+    <div class="quote-inner">
+      <p class="quote-text">Code is the art<br />of solving problems<br />beautifully.</p>
+      <!-- <div class="quote-oval"><div class="quote-oval-text"> OPEN TO WORK </div></div> -->
+       <div class="status-box"><span class="highlight"></span>OPEN TO WORK</div>
     </div>
-    <div class="section-body">
-      <div class="resume-layout">
-        <div>
-          <div class="skill-group-title">Experience</div>
-          <div class="timeline-item">
-            <div class="timeline-date">Internship</div>
-            <div class="timeline-role">Sports Analytics Intern</div>
-            <div class="timeline-company">Catch Sports Analytics</div>
-            <div class="timeline-desc">Hands-on experience in sports analytics — game analysis, tagging methods, and real-time data handling. Developed skills in data analysis, sports tagging, and attention to detail.</div>
-          </div>
-          <div class="skill-group-title" style="margin-top:2rem;">Education</div>
-          <div class="timeline-item">
-            <div class="timeline-date">B.Tech</div>
-            <div class="timeline-role">Computer Technology</div>
-            <div class="timeline-company">Priyadarshini College of Engineering</div>
-            <div class="timeline-desc">CGPA: 7.0 / 10</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Diploma</div>
-            <div class="timeline-role">Computer Technology</div>
-            <div class="timeline-company">Priyadarshini Polytechnic</div>
-            <div class="timeline-desc">Percentage: 78.69%</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Class X</div>
-            <div class="timeline-role">Secondary School</div>
-            <div class="timeline-company">Tejasvi Vidya Mandir</div>
-            <div class="timeline-desc">Percentage: 84.60%</div>
-          </div>
-        </div>
-        <div>
-          <div class="resume-side-title">Certifications</div>
-          <div class="cert-item">Python Full Stack Developer — Virtual Internship</div>
-          <div class="cert-item">SQL Basics Certification</div>
-          <div class="resume-side-title">Languages</div>
-          <div class="cert-item">English — Fluent</div>
-          <div class="cert-item">Hindi — Native</div>
-          <div class="cert-item">Marathi — Native</div>
-          <div class="resume-side-title">Location</div>
-          <div class="cert-item">Nagpur, Maharashtra, India</div>
-        </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="ed-section ed-dark">
+    <div class="ed-full">
+      <h2 class="ed-heading-full">My Skills</h2>
+      <div class="art-skills-grid" id="skillsLayout">
+        <div class="art-loading">Loading skills...</div>
       </div>
     </div>
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section id="certifications" class="section">
-    <div class="section-header">
-      <span class="section-num">05 /</span>
-      <h2 class="section-title">Certifications</h2>
-    </div>
-    <div class="section-body">
-      <div class="certs-grid" id="certsGrid">
-        <div class="projects-loading">Loading certifications...</div>
+  <section id="certifications" class="ed-section">
+    <div class="ed-full">
+      <h2 class="ed-heading-full">Certifications</h2>
+      <div class="art-cert-grid" id="certsGrid">
+        <div class="art-loading">Loading...</div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="section-header">
-      <span class="section-num">06 /</span>
-      <h2 class="section-title">Contact</h2>
-    </div>
-    <div class="section-body">
-      <div class="contact-layout">
-        <div class="contact-info">
-          <p>I'm actively looking for my next opportunity — whether that's a full-time role, internship, or an interesting project to collaborate on. If you think I'd be a good fit, I'd love to hear from you.</p>
-          <div class="contact-links">
-            <a class="contact-link" href="mailto:harshalthakur0987@gmail.com">
-              <span>harshalthakur0987@gmail.com</span><span>→</span>
-            </a>
-            <a class="contact-link" href="tel:+918390429410">
-              <span>+91 83904 29410</span><span>→</span>
-            </a>
-            <a class="contact-link" href="https://www.linkedin.com/in/harshalthakur/" target="_blank" rel="noopener">
-              <span>LinkedIn — harshalthakur</span><span>→</span>
-            </a>
-          </div>
+  <section id="contact" class="ed-section ed-dark">
+    <div class="ed-section-inner">
+      <div class="ed-left">
+        <h2 class="ed-heading">Reach Out<br />to Me</h2>
+      </div>
+      <div class="ed-right">
+        <div class="contact-grid">
+          <div class="contact-col"><div class="contact-label">Email</div><a href="mailto:harshalthakur0987@gmail.com" class="contact-val">harshalthakur0987@gmail.com</a></div>
+          <div class="contact-col"><div class="contact-label">Phone</div><a href="tel:+918390429410" class="contact-val">+91 83904 29410</a></div>
+          <div class="contact-col"><div class="contact-label">LinkedIn</div><a href="https://www.linkedin.com/in/harshalthakur/" target="_blank" class="contact-val">harshalthakur</a></div>
+          <div class="contact-col"><div class="contact-label">Location</div><span class="contact-val">Nagpur, Maharashtra</span></div>
         </div>
-        <div class="contact-form-wrap">
-          <div id="formSuccess" class="form-success hidden">
-            <div class="form-success-icon">✓</div>
-            <p>Message sent! I'll get back to you soon.</p>
+        <form id="contactForm" class="art-form" novalidate>
+          <div class="art-form-row">
+            <input class="art-input" type="text" id="name" name="name" placeholder="Your name" required />
+            <input class="art-input" type="email" id="email" name="email" placeholder="Your email" required />
           </div>
-          <form id="contactForm" class="contact-form" novalidate>
-            <div class="form-field">
-              <label class="form-label" for="name">Your name</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="Full name" required />
-              <span class="form-error" id="nameError"></span>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="email">Your email</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required />
-              <span class="form-error" id="emailError"></span>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="message">Message</label>
-              <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
-              <span class="form-error" id="messageError"></span>
-            </div>
-            <button type="submit" class="btn btn-primary" id="submitBtn">Send message →</button>
-            <span class="form-error" id="formError"></span>
-          </form>
-        </div>
+          <span class="art-error" id="nameError"></span>
+          <span class="art-error" id="emailError"></span>
+          <textarea class="art-input art-textarea" id="message" name="message" rows="4" placeholder="Tell me about the opportunity..." required></textarea>
+          <span class="art-error" id="messageError"></span>
+          <div id="formSuccess" class="art-success hidden">Message sent! I will get back to you soon.</div>
+          <button type="submit" class="art-btn" id="submitBtn">&#8627; &nbsp;Let's collaborate</button>
+          <span class="art-error" id="formError"></span>
+        </form>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-brand">
-      <video src="frontend/img/logo.mp4" autoplay loop muted playsinline style="height:36px; width:auto; object-fit:contain; display:block;"></video>
-    </div>
-    <div>Harshal Thakur · Nagpur, India</div>
-    <div>© 2026</div>
+  <footer class="art-footer">
+    <video src="frontend/img/logo.mp4" autoplay loop muted playsinline style="height:40px;width:auto;object-fit:contain;display:block;"></video>
+    <div>Harshal Thakur &middot; Nagpur, India &middot; &copy; 2026</div>
+    <div>&#8627; &nbsp;Open to work</div>
   </footer>
 
   <script src="frontend/js/main.js"></script>
