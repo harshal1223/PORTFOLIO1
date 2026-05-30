@@ -6,14 +6,18 @@
   <title>Harshal Thakur — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="frontend/css/style.css" />
 </head>
 <body>
 
+  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-logo">
       <video src="frontend/img/logo.mp4" autoplay loop muted playsinline class="nav-logo-video"></video>
+    </div>
+    <div class="logo-overlay" id="logoOverlay">
+        <video src="frontend/img/logo.mp4" autoplay loop muted playsinline></video>
     </div>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -27,6 +31,7 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
   <div class="nav-mobile-menu" id="mobileMenu">
     <a href="#about" class="mobile-link">About</a>
     <a href="#projects" class="mobile-link">Projects</a>
@@ -38,51 +43,82 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <h1 class="hero-heading">Welcome to<br />My Dev<br />Portfolio</h1>
-      <div class="hero-badge">Harshal Thakur / Software Engineer</div>
-      <div class="hero-links">
-        <a href="https://www.linkedin.com/in/harshalthakur/" target="_blank" rel="noopener noreferrer" class="hero-link">Connect on LinkedIn</a>
+    <div class="hero-text" style="--i:0">
+      <p class="hero-eyebrow">Software Engineer · Open to Work</p>
+      <h1 class="hero-heading">"Building Smart<br />Solutions<br />with Code"</h1>
+      <div class="hero-badge" style="--i:1">Harshal Thakur / Software Engineer</div>
+      <div class="hero-links" style="--i:2">
+        <a href="https://www.linkedin.com/in/harshalthakur/" target="_blank" rel="noopener noreferrer" class="hero-link">
+          <span>Connect on LinkedIn</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        &emsp;&emsp;
+        <a href="https://github.com/harshal1223" target="_blank" rel="noopener noreferrer" class="hero-link">
+          <span>View GitHub</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
       </div>
     </div>
-    <div class="hero-img-wrap">
-      <div class="hero-circle">
-        <img src="frontend/img/harshal.jpg" alt="Harshal Thakur" class="hero-photo" onerror="this.style.display='none'" />
+
+    <div class="hero-img-wrap" style="--i:1">
+      <div class="hero-img-container">
+        <img src="frontend/img/harshal1.jpg" alt="Harshal Thakur" class="hero-photo" onerror="this.style.display='none'" />
+        <div class="hero-img-overlay"></div>
       </div>
+      <div class="hero-img-ring"></div>
     </div>
+
     <div class="hero-cta-row">
-      <a href="#projects" class="hero-cta-link">&#8627; &nbsp;See my work</a>
+      <a href="#projects" class="hero-cta-link">&#8627;&nbsp;&nbsp;See my work</a>
+      <a href="#contact" class="hero-cta-link">Get in touch &nbsp;&#8594;</a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="ed-section">
+  <section id="about" class="ed-section fade-up">
     <div class="ed-section-inner">
       <div class="ed-left">
+        <span class="section-tag">01 / About</span>
         <h2 class="ed-heading">Who is<br />Harshal?</h2>
       </div>
       <div class="ed-right">
         <p class="ed-body">I'm a Computer Science graduate with a strong interest in programming and problem solving. My core strengths are Python and Java, backed by solid knowledge of Data Structures, DBMS, and CS fundamentals.</p>
         <p class="ed-body">I've built AI-powered web apps, data scrapers, and desktop systems — always focused on clean logic and real utility. Currently looking for an opportunity to contribute in a dynamic team.</p>
         <div class="ed-stats-row">
-          <div class="ed-stat"><span class="ed-stat-num">3</span><span class="ed-stat-label">Projects</span></div>
-          <div class="ed-stat"><span class="ed-stat-num">7.0</span><span class="ed-stat-label">CGPA</span></div>
-          <div class="ed-stat"><span class="ed-stat-num">2+</span><span class="ed-stat-label">Certs</span></div>
-          <div class="ed-stat"><span class="ed-stat-num">1</span><span class="ed-stat-label">Internship</span></div>
+          <div class="ed-stat">
+            <span class="ed-stat-num">5+</span>
+            <span class="ed-stat-label">Projects</span>
+          </div>
+          <div class="ed-stat">
+            <span class="ed-stat-num">7.0</span>
+            <span class="ed-stat-label">CGPA</span>
+          </div>
+          <div class="ed-stat">
+            <span class="ed-stat-num">3+</span>
+            <span class="ed-stat-label">Certs</span>
+          </div>
+          <div class="ed-stat">
+            <span class="ed-stat-num">1</span>
+            <span class="ed-stat-label">Internship</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- RESUME -->
-  <section id="resume" class="ed-section ed-dark">
+  <section id="resume" class="ed-section ed-dark fade-up">
     <div class="ed-section-inner">
       <div class="ed-left">
+        <span class="section-tag">02 / Background</span>
         <h2 class="ed-heading">My<br />Background</h2>
+          <a href="frontend/img/Harshal_Thakur_Resume.pdf" download class="art-btn" style="margin-top:1.5rem; display:inline-block;">
+        ↓ &nbsp; Download Resume</a>
       </div>
+    
       <div class="ed-right">
         <div class="bg-group">
-          <div class="bg-label">&#8627; &nbsp;Education</div>
+          <div class="bg-label">&#8627;&nbsp;&nbsp;Education</div>
           <ul class="bg-list">
             <li>B.Tech, Computer Technology — Priyadarshini College of Engineering <em>CGPA 7.0</em></li>
             <li>Diploma, Computer Technology — Priyadarshini Polytechnic <em>78.69%</em></li>
@@ -90,17 +126,18 @@
           </ul>
         </div>
         <div class="bg-group">
-          <div class="bg-label">&#8627; &nbsp;Work Experience</div>
+          <div class="bg-label">&#8627;&nbsp;&nbsp;Work Experience</div>
           <ul class="bg-list">
             <li>Sports Analytics Intern — Catch Sports Analytics</li>
             <li>Data Analysis, Tagging methods, Real-time data handling</li>
           </ul>
         </div>
         <div class="bg-group">
-          <div class="bg-label">&#8627; &nbsp;Certifications</div>
+          <div class="bg-label">&#8627;&nbsp;&nbsp;Certifications</div>
           <ul class="bg-list">
-            <li>Python Full Stack Developer Virtual Internship — AICTE/EduSkills, 2025</li>
-            <li>Android Developer Virtual Internship — AICTE/Google for Developers, 2025</li>
+            <li>Python Full Stack Developer — EduSkills, 2025</li>
+            <li>Android Developer Virtual  — AICTE/Google for Developers, 2025</li>
+            <li>SQL Fundamentals — Coursera, 2026</li>
           </ul>
         </div>
       </div>
@@ -108,8 +145,9 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="ed-section">
+  <section id="projects" class="ed-section fade-up">
     <div class="ed-full">
+      <span class="section-tag">03 / Work</span>
       <h2 class="ed-heading-full">My Projects</h2>
       <div class="art-proj-grid" id="projectsGrid">
         <div class="art-loading">Loading projects...</div>
@@ -118,17 +156,20 @@
   </section>
 
   <!-- QUOTE BAND -->
-  <section class="quote-band">
+  <section class="quote-band fade-up">
     <div class="quote-inner">
       <p class="quote-text">Code is the art<br />of solving problems<br />beautifully.</p>
-      <!-- <div class="quote-oval"><div class="quote-oval-text"> OPEN TO WORK </div></div> -->
-       <div class="status-box"><span class="highlight"></span>OPEN TO WORK</div>
+      <div class="status-box">
+        <span class="status-dot"></span>
+        OPEN TO WORK
+      </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="ed-section ed-dark">
+  <section id="skills" class="ed-section ed-dark fade-up">
     <div class="ed-full">
+      <span class="section-tag">04 / Skills</span>
       <h2 class="ed-heading-full">My Skills</h2>
       <div class="art-skills-grid" id="skillsLayout">
         <div class="art-loading">Loading skills...</div>
@@ -137,8 +178,9 @@
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section id="certifications" class="ed-section">
+  <section id="certifications" class="ed-section fade-up">
     <div class="ed-full">
+      <span class="section-tag">05 / Certifications</span>
       <h2 class="ed-heading-full">Certifications</h2>
       <div class="art-cert-grid" id="certsGrid">
         <div class="art-loading">Loading...</div>
@@ -147,18 +189,33 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="ed-section ed-dark">
+  <section id="contact" class="ed-section ed-dark fade-up">
     <div class="ed-section-inner">
       <div class="ed-left">
+        <span class="section-tag">06 / Contact</span>
         <h2 class="ed-heading">Reach Out<br />to Me</h2>
+        <p class="ed-body" style="margin-top:1.5rem;">Available for full-time roles, freelance projects, and collaborations.</p>
       </div>
       <div class="ed-right">
         <div class="contact-grid">
-          <div class="contact-col"><div class="contact-label">Email</div><a href="mailto:harshalthakur0987@gmail.com" class="contact-val">harshalthakur0987@gmail.com</a></div>
-          <div class="contact-col"><div class="contact-label">Phone</div><a href="tel:+918390429410" class="contact-val">+91 83904 29410</a></div>
-          <div class="contact-col"><div class="contact-label">LinkedIn</div><a href="https://www.linkedin.com/in/harshalthakur/" target="_blank" class="contact-val">harshalthakur</a></div>
-          <div class="contact-col"><div class="contact-label">Location</div><span class="contact-val">Nagpur, Maharashtra</span></div>
+          <div class="contact-col">
+            <div class="contact-label">Email</div>
+            <a href="mailto:harshalthakur0987@gmail.com" class="contact-val">harshalthakur0987@gmail.com</a>
+          </div>
+          <div class="contact-col">
+            <div class="contact-label">Phone</div>
+            <a href="tel:+918390429410" class="contact-val">+91 83904 29410</a>
+          </div>
+          <div class="contact-col">
+            <div class="contact-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/harshalthakur/" target="_blank" class="contact-val">harshalthakur</a>
+          </div>
+          <div class="contact-col">
+            <div class="contact-label">Location</div>
+            <span class="contact-val">Nagpur, Maharashtra</span>
+          </div>
         </div>
+
         <form id="contactForm" class="art-form" novalidate>
           <div class="art-form-row">
             <input class="art-input" type="text" id="name" name="name" placeholder="Your name" required />
@@ -169,7 +226,7 @@
           <textarea class="art-input art-textarea" id="message" name="message" rows="4" placeholder="Tell me about the opportunity..." required></textarea>
           <span class="art-error" id="messageError"></span>
           <div id="formSuccess" class="art-success hidden">Message sent! I will get back to you soon.</div>
-          <button type="submit" class="art-btn" id="submitBtn">&#8627; &nbsp;Let's collaborate</button>
+          <button type="submit" class="art-btn" id="submitBtn">&#8627;&nbsp;&nbsp;Let's collaborate</button>
           <span class="art-error" id="formError"></span>
         </form>
       </div>
@@ -177,11 +234,49 @@
   </section>
 
   <footer class="art-footer">
-    <video src="frontend/img/logo.mp4" autoplay loop muted playsinline style="height:40px;width:auto;object-fit:contain;display:block;"></video>
-    <div>Harshal Thakur &middot; Nagpur, India &middot; &copy; 2026</div>
-    <div>&#8627; &nbsp;Open to work</div>
+    <video src="frontend/img/logo.mp4" autoplay loop muted playsinline style="height:36px;width:auto;object-fit:contain;display:block;"></video>
+    <div class="footer-center">Harshal Thakur &middot; Nagpur, India &middot; &copy; 2026</div>
+    <div class="footer-right">&#8627;&nbsp;&nbsp;Open to work</div>
   </footer>
 
   <script src="frontend/js/main.js"></script>
+
+  <script>
+    /* ---- Navbar shrink on scroll ---- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    /* ---- Hamburger ---- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    /* ---- Fade-up on scroll ---- */
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
