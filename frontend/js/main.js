@@ -23,35 +23,22 @@ function setupScrollObserver() {
 
 
 /* ---- INTERACTIVE LOGO POPUP ---- */
+const navLogo = document.querySelector('.nav-logo');
+const logoOverlay = document.getElementById('logoOverlay');
 
-function setupLogoInteraction(){
-  const logo = document.querySelector('.nav-logo-video');
-  if(!logo) return;
-  let popup;
-  logo.addEventListener('click',()=>{
-    if(document.querySelector('.logo-preview')){
-      document.querySelector('.logo-preview').remove();
-      return;
-    }
-    popup=document.createElement('div');
-    popup.className='logo-preview';
-    popup.innerHTML=`
-      <video 
-        src="${logo.getAttribute('src')}" 
-        autoplay 
-        loop 
-        muted 
-        playsinline>
-      </video>
-      <p>Harshal Thakur Logo</p>
-    `;
-    document.body.appendChild(popup);
-    popup.addEventListener('click',()=>{
-      popup.remove();
-    });
-  });
+navLogo.addEventListener('click', () => {
+  logoOverlay.style.display = 'flex'; // ← force flex directly
+});
 
-}
+logoOverlay.addEventListener('click', () => {
+  logoOverlay.style.display = 'none';
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') logoOverlay.style.display = 'none';
+});
+
+
 /* ---- Projects ---- */
 async function loadProjects() {
   const grid = document.getElementById('projectsGrid');
